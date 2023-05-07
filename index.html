@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Moneymanagement</title>
+  </head>
+  <body>
+    <h1 align="center">Expense Tracker</h1>
+    <div class="container">
+      <h3 id="acBtn" onclick="showModal()">Info</h3>
+      <h3 id="acBtn1" onclick="toggleDarkMode()">Dark/Light</h3>
+      <div class="balance">
+        <h2>Total Saldo:</h2>
+        <h3 id="balance-amount">Rp0</h3>
+      </div>
+      <div class="budgeting">
+        <h3>Pengganggaram</h3>
+        <p>Total pendapatan : <span id="total-income"></span></p>
+        <p>Pengeluaran kebutuhan: <span id="needs-expenses"></span></p>
+        <p>Pengeluaran keinginan: <span id="wants-expenses"></span></p>
+        <br /><br />
+      </div>
+      <div class="input">
+        <label for="input-desc">Deskripsi:</label>
+        <input type="text" id="input-desc" placeholder="Masukkan deskripsi" />
+        <label for="input-amount">Jumlah:</label>
+        <input type="number" id="input-amount" placeholder="Masukkan jumlah" />
+        <label for="expense-category">Kategori:</label>
+        <select id="expense-category">
+          <option value="needs">Kebutuhan</option>
+          <option value="wants">Kepengen</option>
+        </select>
+        <button id="add-expense" onclick="addExpense()">Tambah Pengeluaran</button>
+        <button id="add-income" onclick="addIncome()">Tambah Pemasukan</button>
+      </div>
+      <div class="list">
+        <h2>Daftar Transaksi</h2>
+        <ul id="transaction-list"></ul>
+      </div>
+    </div>
+    <div id="myModal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="closeBtn">x</p>
+        <p>
+          Selamat datang, aplikasi ini adalah alat yang diharapkan berguna untuk mencapai
+          tujuan keuangan Anda. Salah satu strategi kunci yang kami gunakan disebut dengan
+          aturan 50/30/20. Elizabeth Warren, seorang senator AS, mempopulerkan aturan ini
+          dalam bukunya "All Your Worth: The Ultimate Lifetime Money Plan". Warren
+          mengatakan bahwa aturan 50-30-20 membantu orang untuk hidup dalam batas-batas
+          yang terjangkau, sambil tetap menyisihkan uang untuk masa depan.
+          <br />
+          <br />
+          Berikut adalah cara kerjanya: <br />
+          Pertama, alokasikan 50% dari pendapatan Anda untuk kebutuhan Anda, yaitu biaya
+          penting yang harus Anda bayar, seperti bahan makanan, biaya listrik, kebutuhan
+          kesehatan dll. Ini adalah pengeluaran yang tidak bisa Anda lupakan, dan mereka
+          harus selalu menjadi prioritas pertama.
+          <br />
+          Selanjutnya, alokasikan 30% dari pendapatan Anda untuk keinginan Anda, yaitu
+          pengeluaran yang tidak benar-benar diperlukan tetapi membuat hidup Anda lebih
+          menyenangkan, seperti makan di luar, hiburan, atau hobi. Pengeluaran ini dapat
+          disesuaikan berdasarkan gaya hidup dan preferensi pribadi Anda. <br />
+          Terakhir, alokasikan 20% dari pendapatan Anda untuk tabungan dan tujuan keuangan
+          Anda, seperti membayar utang, membangun dana darurat, atau berinvestasi untuk
+          masa depan. Ini adalah tempat Anda membuat kemajuan menuju tujuan keuangan
+          jangka panjang Anda, dan sangat penting untuk memberinya prioritas. <br /><br />
+          Dengan mengikuti aturan ini, Anda dapat memastikan bahwa Anda memenuhi kebutuhan
+          dasar Anda, menikmati hidup Anda, dan membangun dasar keuangan yang kuat untuk
+          masa depan. Di sini, kami membantu Anda menerapkan aturan 50/30/20 dengan
+          menyediakan fitur yang digunakan untuk melacak pengeluaran Anda, merencanakan
+          pengeluaran Anda, dan memantau kesehatan keuangan. Kami percaya bahwa kesehatan
+          keuangan adalah komponen kunci dari kesejahteraan secara keseluruhan, dan kami
+          berkomitmen untuk membantu Anda mencapai tujuan keuangan Anda.
+          <br /><br />
+          Berdasarkan peraturan dan dengan mempertimbangkan total pendapatan Anda, rencana
+          pengeluaran dan tabungan Anda dapat dilihat di bawah ini:
+        </p>
+        <p>Kebutuhan : <span id="needs-amount"></span></p>
+        <p>Keinginan : <span id="wants-amount"></span></p>
+        <p>Tabungan : <span id="savings-amount"></span></p>
+      </div>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

@@ -1,0 +1,193 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family:'Poppins', sans-serif;
+  text-decoration: none;
+}
+
+:root {
+  --prim-col : #f1f1f1; 
+  --sec-col : #fff;
+  --text-col : black;
+}
+
+.dark-mode {
+  --prim-col : rgb(33, 33, 33); 
+  --sec-col : rgb(42, 42, 42);
+  --text-col : #fff;
+}
+
+body {
+  margin: 0;
+  padding: 20px 50px;
+  font-family: Arial, sans-serif;
+  background-color: var(--prim-col);
+  color : var(--text-col)
+}
+
+.container {
+  max-width: 700px;
+  padding: 20px;
+  margin: 10px auto;
+  position: relative;
+  background-color: var(--sec-col);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+
+p {
+  font-size: 16px;
+}
+
+#acBtn, #acBtn1 {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  cursor: pointer;
+  color: green;
+  width: fit-content;
+}
+
+#acBtn1 {
+  left: 15px;
+}
+
+/* balance */
+.balance {
+  margin-top: 30px;
+}
+.balance h3 {
+  margin-bottom: 30px;
+  margin-top: 10px;
+  color: #4caf50;
+  font-size: 36px;
+}
+
+.exceeded-limit {
+  color: red;
+  font-weight: bold;
+}
+/* balance */
+
+/* form */
+input,
+select {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  outline: none;
+  font-size: 16px;
+  margin-bottom: 10px;
+  border-radius: 5px;
+  border: solid 1px rgb(191, 191, 191);
+  background: white;
+}
+
+select {
+  width: 50%;
+}
+
+label {
+  font-weight: bold;
+}
+
+button {
+  border: none;
+  background-color: #4caf50;
+  margin: 10px 0;
+  padding: 10px 15px;
+  color: white;
+  border-radius: 5px;
+  font-size: 14px;
+}
+/* form */
+
+/* list */
+.list li .delete {
+  background: none;
+  color: #f00;
+  cursor: pointer;
+}
+
+.list ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  margin-bottom: 10px;
+  background-color: var(--prim-col);
+  border-radius: 5px;
+}
+/* list */
+
+/* pop up box */
+.modal {
+  display: none;
+  position: fixed; 
+  z-index: 1; 
+  left: 0;
+  top: 0;
+  width: 100%; 
+  font-size: 18px;
+  height: 100%;
+  overflow: auto; 
+  background-color: rgba(0,0,0,0.4);
+}
+
+.modal-content {
+  background-color: var(--sec-col);
+  margin: 5% auto; 
+  padding: 50px 35px;
+  position: relative;
+  width: 50%; 
+}
+
+.modal-content #closeBtn {
+  color : var(--text-col);
+  text-align: end;
+  cursor: pointer;
+}
+/* pop up box */
+
+
+@media (max-width : 1000px) {
+  .modal-content {
+    width: 70%;
+  }
+}
+
+@media (max-width : 850px) {
+  .modal-content {
+    width: 80%;
+  }
+}
+
+@media (max-width : 500px) {
+  body {
+    padding: 20px 30px;
+  }
+  .modal-content {
+    width: 85%;
+    padding: 35px 20px;
+  }
+
+  .balance h3 {
+    font-size: 30px;
+  }
+
+  h2 {
+    font-size: 20px;
+  }
+
+  h3,p, select,input,button,li {
+    font-size: 14px;
+  }
+
+}
